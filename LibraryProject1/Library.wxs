@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<Fragment>
+
+
+		<DirectoryRef Id="INSTALLFOLDER">
+ 		<Directory Id="SampleComponentsDirectory"
+			  Name="Sample Components" />
+		</DirectoryRef>
+
+
+		<!--<Feature Id="SampleFeature">
+			 <ComponentGroupRef Id="Component"/>-->
+		<!--</Feature>-->	
+		</Fragment>
+	
+</Wix>

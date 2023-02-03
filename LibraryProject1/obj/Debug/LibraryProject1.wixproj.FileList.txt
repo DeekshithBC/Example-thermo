@@ -1,0 +1,2 @@
+obj\Debug\Library.wixobj
+obj\Debug\NewComponent.wixobj
