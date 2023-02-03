@@ -1,0 +1,2 @@
+C:\Users\deekshith.bc\source\repos\WindowsService\obj\x86\Debug\WindowsService.csproj.AssemblyReference.cache
+C:\Users\deekshith.bc\source\repos\WindowsService\obj\x86\Debug\WindowsService.csproj.CoreCompileInputs.cache
