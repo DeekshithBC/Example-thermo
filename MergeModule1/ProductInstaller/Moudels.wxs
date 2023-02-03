@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include vars.wxi?>
+  <Fragment>
+    <DirectoryRef Id="APPLICATIONFOLDER">
+		<!--
+		TODO: Update Configuration data based on Program settings.
+		-->
+      <Merge Id="IQReportMSM.msm" SourceFile="$(var.MergeModulesFolder)\IQReportMSM.msm" DiskId="1" Language="1033" FileCompression="yes">
+		  <ConfigurationData Name="IQREPORT" Value="TRUE" />
+		  <ConfigurationData Name="IQREPORT" Value="TRUE" />
+        <ConfigurationData Name="IQREPORTPATH" Value="[APPLICATIONFOLDER]IQ Reports\" />
+        <ConfigurationData Name="IQLOGPATH" Value="[APPLICATIONFOLDER]IQ Reports\" />
+        <ConfigurationData Name="SETUPAUTHOR" Value="[ProductName]" />
+        <ConfigurationData Name="SETUPCREATOR" Value="[ProductName]" />
+        <ConfigurationData Name="SETUPKEYWORDS" Value="[ProductName] IQ Report" />
+        <ConfigurationData Name="SETUPSUBJECT" Value="[ProductName] Install Qualification Report" />
+        <ConfigurationData Name="Enable256Hash" Value="FALSE" />
+        <ConfigurationData Name="IQREPORTALERT" Value="FALSE" />
+        <ConfigurationData Name="RMVIQREPORTALERT" Value="FALSE" />
+        <ConfigurationData Name="IQReportExceptions" Value="xyz.xyz" />
+        <ConfigurationData Name="SERVICESSTATUSLIST" Value="srvc1;srvc2;" />
+        <ConfigurationData Name="DEVICESIQLOGDIAGNOSTICS" Value="FALSE"/>
+		  <!-- Define the Application name -->
+        <ConfigurationData Name="SETUPAPPNAME" Value="ProductSetup"/>
+        <ConfigurationData Name="DisableGACReport" Value="FALSE"/>
+      </Merge>      
+    </DirectoryRef>  
+  </Fragment>
+</Wix>

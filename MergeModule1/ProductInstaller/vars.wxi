@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	
+	<!--
+	TODO: Change PRODUCTRELEASE & UPGRADE_CODE
+	-->
+  <?ifdef NOT $(var.MSI_VER)?>
+  <?define MSI_VER = "1.00.00"?>
+  <?endif?>
+ 
+  <?define CodePage = "1252"?>
+  <?define Manufacturer = "ThermoFisher Scientific, inc."?>
+  <?define INSTALLER = "$(var.TARGETFILESPATH)"?>  
+  <?define UPGRADE_CODE = "{00000000-0000-0000-0000-000000000000}" ?>
+  <?define PRODUCT_SRVC_PACK = "" ?>
+  <?define MergeModulesFolder = $(var.ProjectDir)..\Dependencies?>
+
+	<?define PRODUCTRELEASE = "Template"?>
+</Include>

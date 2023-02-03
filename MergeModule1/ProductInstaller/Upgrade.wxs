@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include vars.wxi?>
+	<Fragment>
+		<Property Id="UPGRADE" Value="$(var.MSI_VER)" />
+	<!--
+	 TODO: chage Upgrade element attribtes (Id).
+	-->
+		<Upgrade Id="$(var.UPGRADE_CODE)">	
+			<UpgradeVersion Property="FOUNDTHHERMORPRODUCTVERSION" 
+											Minimum="1.0.0.0" OnlyDetect="no" 
+											Maximum="$(var.MSI_VER)" 											
+											IncludeMaximum="yes" />
+		</Upgrade>
+	</Fragment>
+</Wix>

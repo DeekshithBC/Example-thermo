@@ -1,0 +1,6 @@
+C:\Users\deekshith.bc\source\repos\MergeModule1\bin\Debug\MergeModule1.msm
+C:\Users\deekshith.bc\source\repos\MergeModule1\bin\Debug\MergeModule1.wixpdb
+obj\Debug\MergeModule.wixobj
+obj\Debug\MergeModule1.wixproj.BindContentsFileListnull.txt
+obj\Debug\MergeModule1.wixproj.BindOutputsFileListnull.txt
+obj\Debug\MergeModule1.wixproj.BindBuiltOutputsFileListnull.txt

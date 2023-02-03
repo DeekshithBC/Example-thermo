@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build;Sign;_CLEAN_" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{5abfd6b6-523d-4106-a2c8-d03cd40bee26}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>ProductInstaller</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <InstallerPlatform>$(OSTARGET)</InstallerPlatform>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <MSI_VER Condition=" '$(MSI_VER)' == '' ">10.20.30.40</MSI_VER>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <Name>_TEMPLATE_Installer</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>SourceDir=$(MSBuildProjectDirectory)\..\Target\;MSI_VER=$(MSI_VER)</DefineConstants>
+    <CompilerAdditionalOptions>-sw1000
+-sw1150
+-sw1077
+-sw1104
+-arch x64</CompilerAdditionalOptions>
+    <LinkerAdditionalOptions>-loc L10n\Installer_EN.wxl</LinkerAdditionalOptions>
+    <VerboseOutput>True</VerboseOutput>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <SuppressValidation>True</SuppressValidation>
+    <SuppressIces>ICE99</SuppressIces>
+    <BUILD>SCM</BUILD>
+    <MSI_VER Condition=" '$(MSI_VER)' == '' ">10.20.30.40</MSI_VER>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>SourceDir=$(MSBuildProjectDirectory)\..\Target\;MSI_VER=$(MSI_VER)</DefineConstants>
+    <LinkerAdditionalOptions>-loc L10n\Installer_EN.wxl</LinkerAdditionalOptions>
+    <SuppressIces>ICE99</SuppressIces>
+    <CompilerAdditionalOptions>-sw1000
+-sw1150
+-sw1077
+-sw1104
+-arch x64</CompilerAdditionalOptions>
+    <SuppressValidation>True</SuppressValidation>
+    <WixVariables>
+    </WixVariables>
+    <MSI_VER Condition=" '$(MSI_VER)' == '' ">10.20.30.40</MSI_VER>
+    <BUILD>SCM</BUILD>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Actions.wxs" />
+    <Compile Include="binaries.wxs" />
+    <Compile Include="Conditions.wxs" />
+    <Compile Include="detection\DOTNET.wxs" />
+    <Compile Include="Directory.wxs" />
+    <Compile Include="Features\Components.wxs" />
+    <Compile Include="Features\Features.wxs" />
+    <Compile Include="Moudels.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="Properties.wxs" />
+    <Compile Include="Registry.wxs" />
+    <Compile Include="Services.wxs" />
+    <Compile Include="Shortcuts.wxs" />
+    <Compile Include="UI\Dialogs.wxs" />
+    <Compile Include="Upgrade.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features" />
+    <Folder Include="L10n" />
+    <Folder Include="detection" />
+    <Folder Include="UI" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixVSExtension">
+      <HintPath>$(WixExtDir)\WixVSExtension.dll</HintPath>
+      <Name>WixVSExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixPSExtension">
+      <HintPath>$(WixExtDir)\WixPSExtension.dll</HintPath>
+      <Name>WixPSExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixMsmqExtension">
+      <HintPath>$(WixExtDir)\WixMsmqExtension.dll</HintPath>
+      <Name>WixMsmqExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixIIsExtension">
+      <HintPath>$(WixExtDir)\WixIIsExtension.dll</HintPath>
+      <Name>WixIIsExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixDirectXExtension">
+      <HintPath>$(WixExtDir)\WixDirectXExtension.dll</HintPath>
+      <Name>WixDirectXExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixDifxAppExtension">
+      <HintPath>$(WixExtDir)\WixDifxAppExtension.dll</HintPath>
+      <Name>WixDifxAppExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixDependencyExtension">
+      <HintPath>$(WixExtDir)\WixDependencyExtension.dll</HintPath>
+      <Name>WixDependencyExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixGamingExtension">
+      <HintPath>$(WixExtDir)\WixGamingExtension.dll</HintPath>
+      <Name>WixGamingExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixTagExtension">
+      <HintPath>$(WixExtDir)\WixTagExtension.dll</HintPath>
+      <Name>WixTagExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixFirewallExtension">
+      <HintPath>$(WixExtDir)\WixFirewallExtension.dll</HintPath>
+      <Name>WixFirewallExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixBalExtension">
+      <HintPath>$(WixExtDir)\WixBalExtension.dll</HintPath>
+      <Name>WixBalExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="L10n\Installer_EN.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vars.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libs\Feature10\Feature10.wixproj">
+      <Name>Feature10</Name>
+      <Project>{e048530a-890a-430d-9228-1ed2ca4c3c6c}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature1\Feature1.wixproj">
+      <Name>Feature1</Name>
+      <Project>{2b48eb54-cb4d-477e-8969-1f1266bc0d5e}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature2\Feature2.wixproj">
+      <Name>Feature2</Name>
+      <Project>{de8b9da5-a8ea-43b5-a710-b58e4e647e7b}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature3\Feature3.wixproj">
+      <Name>Feature3</Name>
+      <Project>{2d3073a8-adb8-4e67-84cd-6a611e7123b3}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature4\Feature4.wixproj">
+      <Name>Feature4</Name>
+      <Project>{26b47188-872e-40e9-af2b-fdfc1f574776}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature5\Feature5.wixproj">
+      <Name>Feature5</Name>
+      <Project>{9e049d0e-11c1-454c-9296-90cb297385ac}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature6\Feature6.wixproj">
+      <Name>Feature6</Name>
+      <Project>{6f9ec2c5-4177-44be-b70a-a5a34d2f3647}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature7\Feature7.wixproj">
+      <Name>Feature7</Name>
+      <Project>{cf1e233f-aa9a-44bd-b9a3-649b7622a8f9}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature8\Feature8.wixproj">
+      <Name>Feature8</Name>
+      <Project>{b80d50e6-a844-4ed5-977a-ab8b6419bfac}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\Feature9\Feature9.wixproj">
+      <Name>Feature9</Name>
+      <Project>{9ca464f6-b481-4725-a9c2-1a90802548d4}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="_CLEAN_" Condition=" '$(Configuration)|$(Platform)' == 'Release|x64'">
+    <RemoveDir Directories="$(TEMP)\Target" ContinueOnError="true" />
+  </Target>
+  <PropertyGroup>
+    <OSTARGET>x64</OSTARGET>
+  </PropertyGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <Target Name="MSIHasher">
+    <Message />
+    <Exec Command="$(ProjectDir)..\Dependencies\MSIFilesHasher.exe /DB:$(ProjectDir)bin\$(Configuration)\en-us\$(OutputName).msi /BLD:$(TEMP)\Target\;$(MSBuildProjectDirectory)\..\Target;" ContinueOnError="true" />
+  </Target>
+  <Target Name="Sign" Condition=" '$(Configuration)|$(Platform)' == 'Release|x86'" DependsOnTargets="MSIHasher">
+    <Exec Command="&quot;$(ProjectDir)..\Dependencies\signtool.exe&quot; sign /v /fd SHA512 /n &quot;Thermo Fisher Scientific, Inc.&quot; /t http://timestamp.digicert.com &quot;$(ProjectDir)bin\$(Configuration)\en-us\$(OutputName).msi&quot;" ContinueOnError="false" Condition="'$(BUILD)' != 'DEV'" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

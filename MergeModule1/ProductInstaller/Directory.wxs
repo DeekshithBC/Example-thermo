@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include vars.wxi?>
+  <Fragment>
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="CommonAppDataFolder">
+        <Directory Id="ThermoScientificAppFldr" Name="ThermoScientific">                             
+         </Directory>
+		<Directory Id="ThermoScientificAppFldr2" Name="Thermo Scientific">
+		</Directory>
+		<Directory Id="ThermoScientificAppFldr3" Name="Thermo">
+		</Directory>  
+       </Directory>       
+     
+      
+      <!-- Desktop folder-->
+      <Directory Id="DesktopFolder" Name="Desktop" />
+      
+      <!--Program files main installation point-->
+      <Directory Id="ProgramFiles64Folder">        
+          <Directory Id="APPLICATIONFOLDER" Name="Thermo">
+            <!-- default folder will be set by corresponding library. -->              
+            <Directory Id="APPROOTFOLDER" Name="[ProductName]">
+				<!--
+				TODO: Rename Directory ID and Name based on program settings
+				-->
+				<Directory Id ="FEATURE1APPLICATIONFOLDER" Name="Feature 1" />
+				<Directory Id ="FEATURE2APPLICATIONFOLDER" Name="Feature 2" />
+				<Directory Id ="FEATURE3APPLICATIONFOLDER" Name="Feature 3" />
+				<Directory Id ="FEATURE4APPLICATIONFOLDER" Name="Feature 4" />
+				<Directory Id ="FEATURE5APPLICATIONFOLDER" Name="Feature 5" />
+				<Directory Id ="FEATURE6APPLICATIONFOLDER" Name="Feature 6" />
+				<Directory Id ="FEATURE7APPLICATIONFOLDER" Name="Feature 7" />
+				<Directory Id ="FEATURE8APPLICATIONFOLDER" Name="Feature 8" />
+				<Directory Id ="FEATURE9APPLICATIONFOLDER" Name="Feature 9" />
+				<Directory Id ="FEATURE10APPLICATIONFOLDER" Name="Feature 10" />
+          </Directory>        
+      </Directory>         
+    
+      <!-- Parent Menu Folder : BEGIN -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="APPROORMENUFOLDER" Name="ThermoFisher [PRODUCT_RELEASE]">
+          <Directory Id="ManualsFolder" Name="Manuals">           
+          </Directory>
+        </Directory>
+      </Directory>
+      <!-- Parent Menu Folder : END -->
+
+		  
+	  <!--
+	  TODO: set settings if the installer target 32bit only.
+	  -->	  
+      <Directory Id="ProgramFilesFolder">        
+      </Directory>
+		  
+		  
+		  
+      <!-- Parent root disk folder-->
+      <Directory Id="WindowsVolume">
+        <Directory Id="THERMOROOT" Name="ThermoScientific">        
+        </Directory>
+        </Directory>  
+     </Directory>
+
+	</Directory>
+  </Fragment>
+</Wix>

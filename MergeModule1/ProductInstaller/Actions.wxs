@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include vars.wxi?>
+  <Fragment Id="Installer_Actions">
+    <SetDirectory Id="APPLICATIONFOLDER" Value="[ProgramFiles64Folder]Thermo\[ProductName]" Sequence="both" >
+      <![CDATA[APPLICATIONFOLDER = ""]]>
+    </SetDirectory>
+     
+    <!-- Version Info configuration-->
+	<!--
+	    TODO: include the ThermoFisher.MsiFramework.CA.dll binarykey
+	
+    <CustomAction Id="CustomActionSetter" BinaryKey="ThermoFisher.MsiFramework.CA.dll" DllEntry="CASetter" Execute="immediate" />
+	
+	-->
+
+    <CustomAction Id="ThermoLoggerCA"
+            Directory="ThermoScientificAppFldr3"
+            ExeCommand='"[WindowsFolder]system32\cmd.exe" /C Copy "[MsiLogFileLocation]" "[ThermoScientificAppFldr3]_[ProductName]_[ACTION]_[ProductVersion]_%RANDOM%_%RANDOM%.log" /vy'
+            Execute="immediate"
+            Impersonate="yes"
+            Return="ignore" />
+
+   
+    
+    <InstallExecuteSequence>
+
+		<!--
+	        TODO: include the CustomActionSetter Custom Action
+	   
+        <Custom Action="CustomActionSetter" After="CostFinalize">
+        <![CDATA[]]>
+        </Custom>
+		
+	 -->
+      
+        <Custom Action="ThermoLoggerCA" After="InstallFinalize" />    
+    </InstallExecuteSequence>
+    
+    <InstallUISequence>
+    </InstallUISequence>
+    <AdminExecuteSequence>
+    </AdminExecuteSequence>
+    <AdminUISequence>
+    </AdminUISequence>
+  </Fragment>
+</Wix>

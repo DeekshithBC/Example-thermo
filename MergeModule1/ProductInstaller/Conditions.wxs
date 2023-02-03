@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment Id="launchConditions">
+    <Property Id="LaunchConditionsTable" Value="1" />
+
+	  
+	<!--
+	TODO:
+	1. These are generic must have condition
+	2. Update based on target prdocut requirments.
+	
+	-->  
+    <Condition Message="!(loc.Condition_OS)">
+      <![CDATA[Installed OR (VersionNT >= 600)]]>
+    </Condition>
+
+    <Condition Message="!(loc.Condition_Arch)">
+      <![CDATA[Installed OR (Msix64)]]>
+    </Condition>
+    
+    <Condition Message="!(loc.Condition_Admin)">
+      <![CDATA[Installed OR (Privileged OR AdminUser)]]>
+    </Condition>
+    <Condition Message="!(loc.Condition_dotnet)">
+      <![CDATA[Installed OR (NETFRAMEWORK_48_OR_LATER_INSTALLED >= "#528040")]]>
+    </Condition>
+
+  </Fragment>
+</Wix>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include vars.wxi?>
+  <Fragment>
+   
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+    <WixVariable Id="WixUISupportPerUser" Value="0" />
+    <WixVariable Id="WixUILicenseRtf" Value="..\resources\EULA_EN.rtf" />
+    <WixVariable Id="WixUIInfoIco" Value="..\resources\logo.ico" />    
+    <Property Id="ARPPRODUCTICON" Value="ICON_9E411377_57A6" />
+    <WixVariable Id="WixUIUpIco" Value="..\resources\logo.ico" />
+    <WixVariable Id="WixUIDialogBmp" Value="..\resources\WixUIDialogBmp.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="..\resources\WixUIBannerBmp.bmp" />    
+
+    <Property Id="DiskPrompt" Value="Installer" />    
+    <Property Id="ApplicationFolderName" Value="Thermo" />
+    <Property Id="MsiLogging" Value="voicewormupx" />    
+    <Property Id="ARPNOMODIFY">1</Property>
+    <Property Id="MSIRESTARTMANAGERCONTROL" Value="Disable" />    
+    <Property Id="REBOOT" Value="ReallySuppress" />    
+    <Property Id="SHRTCT" Value="TRUE" Secure="yes" />       
+	<Property Id="PRODUCT_RELEASE" Value="$(var.PRODUCTRELEASE)"/>
+	  
+	 <!--
+	 TODO: enable service pack releases
+	 --> 
+    <!--<Property Id="SERVICEPACKLEVEL" Value="$(var.PRODUCT_SRVC_PACK)"/>-->
+        
+    
+    <!-- Version Information refrences-->
+    
+    <Property Id="PRODUCTMJR" Value="00" Secure="yes" />
+    <Property Id="PRODUCTMIN" Value="00" Secure="yes" />
+    <Property Id="PRODUCTBLD" Value="00"  Secure="yes" />
+    <Property Id="PRODUCTMINBLD" Value="00"  Secure="yes" />    
+    
+    
+    <!-- Searching for .NET framework values -->
+    <Property Id="MSDOTNET462WIN7">
+      <DirectorySearch Id ="MicrosoftDotNet462WIN7" Path="[WindowsFolder]Microsoft.NET\Framework\v4.0.30319\" Depth="0">
+        <FileSearch Name="System.Activities.dll" MinVersion="4.6.1589" />
+      </DirectorySearch>
+    </Property>
+
+    <Property Id="MSDOTNET472WIN7">
+      <DirectorySearch Id ="MicrosoftDotNet472WIN7" Path="[WindowsFolder]Microsoft.NET\Framework\v4.0.30319\" Depth="0">
+        <FileSearch Name="System.Activities.dll" MinVersion="4.7.3062.0"  />
+      </DirectorySearch>
+    </Property>
+
+    <Property Id="MSDOTNET462WIN10">
+      <DirectorySearch Id ="MicrosoftDotNet462WIN10" Path="[WindowsFolder]Microsoft.NET\Framework\v4.0.30319\" Depth="0">
+        <FileSearch Name="System.Activities.dll" MinVersion="4.6.1585" />
+      </DirectorySearch>
+    </Property>
+
+   
+    <!-- System search-->
+    <Property Id="NETFRAMEWORK_48_OR_LATER_INSTALLED">
+      <RegistrySearch Id="NETFRAMEWORK_48"
+                      Root="HKLM"
+                      Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
+                      Name="Release" Type="raw"/>
+    </Property>
+
+    <Property Id="NETFRAMEWORK_48_OR_LATER_INSTALLED_EX">
+      <DirectorySearch Id ="NETFRAMEWORK_48_Ex" Path="[WindowsFolder]Microsoft.NET\Framework\v4.0.30319\" Depth="1">
+        <FileSearch Name="System.Activities.dll" MinVersion="4.8.01000" />
+      </DirectorySearch>
+    </Property>
+
+  </Fragment>
+</Wix>

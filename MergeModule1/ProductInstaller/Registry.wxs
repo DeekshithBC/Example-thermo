@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="Registry_Installer_Data" Directory="APPLICATIONFOLDER">
+	<!--
+	 TODO: chage Component element attribtes (Id, Guid, value).
+	-->
+      <Component Id="cmp00000000000000000000000000000000" Guid="{00000000-0000-0000-0000-000000000000}" Win64="no">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Thermo Scientific\Installed Version Info" ForceCreateOnInstall="yes" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]" Name="Alias" Value="!(loc._TEMPLATE_)" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]" Name="Type" Value="Application" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]" Name="Build Number" Value="[PRODUCTBLD]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]" Name="Install Date" Value="[INSTALLDATE]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]" Name="ApplicationPath" Value="[APPLICATIONFOLDER]\[PRODUCT_RELEASE]_TEMPLATE_.exe" />        
+
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" ForceCreateOnInstall="yes" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Release Date" Value="[BLDDATE]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Install Date" Value="[INSTALLDATE]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Description" Value="[ProductName] [PRODUCTMJR].[PRODUCTMIN] Release" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Version" Value="[ProductVersion]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Major Version" Value="[PRODUCTMJR]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Minor Version" Value="[PRODUCTMIN]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Build Number" Value="[PRODUCTBLD]" />
+        <RegistryValue Root="HKLM" Type="string" Key="SOFTWARE\Thermo Scientific\Installed Version Info\[PRODUCT_RELEASE]\[PRODUCTMJR].[PRODUCTMIN][SERVICEPACKLEVEL]" Name="Maintenance Version" Value="[PRODUCTMINBLD]" />           
+      </Component>
+
+	 <!--
+	 TODO: chage Component element attribtes (Id, Guid).
+	 -->	
+      <Component Id="Reg00000000000000000000000000000000" Guid="{00000000-0000-0000-0000-000000000000}" Win64="no">
+		 <!--
+	        TODO: chage RemoveRegistryKey element attribtes (key).
+	    -->
+		  <RemoveRegistryKey Id="RegRmvBA4C7ADC034F4136A04661CBC6058A69" Key="SOFTWARE\Thermo\Installer\[PRODUCT_RELEASE][ProductVersion]" Action="removeOnUninstall" Root="HKLM" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

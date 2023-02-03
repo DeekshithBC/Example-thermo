@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<Icon Id="ICON_9E411377_57A6" SourceFile="..\resources\logo.ico" />		
+		
+		
+		<!--
+		 TODO: update reference to CustomActions\CA\CA.csproj from ER\MSIFramework build 
+		<Binary Id="ThermoFisher.MsiFramework.CA.dll" SourceFile="$(var.ProjectDir)..\Dependencies\ThermoFisher.MsiFramework.CA.CA.dll" />		
+		-->
+	
+		
+	</Fragment>
+</Wix>

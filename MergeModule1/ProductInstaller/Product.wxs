@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include vars.wxi?>
+	
+  <!--
+  TODO: update Product Element attributes based on your program settings
+  -->
+  <Product Id="*" Name="!(loc.PRODUCT_NAME)"
+           Language="1033"
+           Version="$(var.MSI_VER)"
+           Manufacturer="$(var.Manufacturer)"          
+           UpgradeCode="$(var.UPGRADE_CODE)"
+           Codepage="$(var.CodePage)">
+
+    <!--
+    TODO: update Package Element attributes based on your program settings
+    -->	  
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" ReadOnly="yes" InstallPrivileges="elevated"
+             AdminImage="yes" Comments="!(loc.Package_Comments)" Platform="x64" SummaryCodepage="$(var.CodePage)"
+             Description="!(loc.Package_Discription)" Keywords="MSI,$(loc.PRODUCT_NAME)" />
+
+    <MajorUpgrade DowngradeErrorMessage="!(loc.Downgrade_Error)" AllowDowngrades="no" Schedule="afterInstallInitialize"/>    
+    <MediaTemplate CompressionLevel="medium" EmbedCab="yes" CabinetTemplate="Media{0}.cab"/>
+
+    <!--Features references-->
+    <FeatureGroupRef Id="MAIN_FEATURES" />
+
+    <!-- UI references -->
+    <UIRef Id="Defualt_UI" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <PropertyRef Id="LaunchConditionsTable" />
+    <PropertyRef Id="UPGRADE"/>
+    
+    <CustomActionRef Id="ThermoLoggerCA" />    
+	  
+    <!--
+	   TODO: include the CustomActionSetter Custom Action
+		
+	<CustomActionRef Id="CustomActionSetter"/>
+	
+	-->          
+    
+
+    <PackageCertificates>
+      <DigitalCertificate Id="D0988F92_B7BF_FED51DECA9E5.Cert" SourceFile="$(var.ProjectDir)..\MSIFileSign.cer" />
+    </PackageCertificates>
+    
+  </Product>
+</Wix>
