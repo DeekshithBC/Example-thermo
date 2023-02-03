@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include Include1.wxi ?>
+	<Fragment>
+		<!--<Feature Id="ProductFeature" Title="$(var.Name)" Level="1">
+
+			--><!--<ComponentGroupRef Id="SampleComponentGroup" />--><!--
+			<ComponentRef Id='MainExecutable'/>
+			<ComponentGroupRef Id="Component"/>
+
+			--><!--Main application executable component--><!--
+			<ComponentGroupRef Id="ProductComponents" />
+			--><!--<ComponentGroupRef Id="NewComponents"/>--><!--
+			--><!--Main application shortcut for Program Menu--><!--
+			<ComponentRef Id="ApplicationShortcut" />
+			--><!--Desktop shortcut--><!--
+			<ComponentGroupRef Id="ComponentGroupDesktopShortcut" />
+			<ComponentGroupRef Id="NewProductComponents" />
+
+			<MergeRef Id="merge" />
+		</Feature>-->
+	</Fragment>
+</Wix>

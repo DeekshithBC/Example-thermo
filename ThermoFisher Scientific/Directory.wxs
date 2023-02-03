@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<!--Fragment with details of installation directory-->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<!-- Create a folder inside program files with Company Name-->
+				<Directory Id="ROOTDIRECTORY" Name="ThermoFisher Scientific, inc">
+					<!-- Create a folder inside Company Name folder with Product Name-->
+					<Directory Id="INSTALLFOLDER" Name="ThermoFisher Scientific">
+						<Directory Id="NEWFOLDER" Name="SetupProject2" />
+						<Directory Id="LibraryFOLDER"/>
+						<Directory Id="CmpFOLDER" Name="Components">
+						<Directory Id="Folder">
+
+							</Directory>
+
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+
+			<Directory Id="DesktopFolder"/>
+ <!--Create application folder in Program Menu-->
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="ThermoFisher Scientific"/>
+			</Directory>
+	</Directory>
+	</Fragment>
+
+		
+	
+</Wix>

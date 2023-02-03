@@ -1,0 +1,36 @@
+C:\Users\deekshith.bc\AppData\Local\Temp\iuvtsjug\MergeId.25788\abc.175A50CA_5130_402A_A825_CFA13174EE27
+C:\Users\deekshith.bc\AppData\Local\Temp\iuvtsjug\MergeId.25788\abc.exe.config.175A50CA_5130_402A_A825_CFA13174EE27
+C:\Users\deekshith.bc\AppData\Local\Temp\iuvtsjug\MergeId.25788\abc.pdb.175A50CA_5130_402A_A825_CFA13174EE27
+Files\Sample Application.exe.config
+Files\Sample Application.exe
+obj\Debug\..\..\LPC\System.ServiceProcess.ServiceController.dll
+obj\Debug\..\..\LPC\Serilog.Sinks.File.dll
+obj\Debug\..\..\LPC\Serilog.Extensions.Hosting.dll
+obj\Debug\..\..\LPC\Microsoft.AspNetCore.Mvc.Versioning.dll
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Client.runtimeconfig.json
+obj\Debug\..\..\LPC\Grpc.AspNetCore.Server.ClientFactory.dll
+obj\Debug\..\..\LPC\launch.bat
+obj\Debug\..\..\LPC\Google.Protobuf.dll
+obj\Debug\..\..\LPC\Serilog.AspNetCore.dll
+obj\Debug\..\..\LPC\Serilog.Formatting.Compact.dll
+obj\Debug\..\..\LPC\Serilog.Sinks.Debug.dll
+obj\Debug\..\..\LPC\Serilog.Settings.Configuration.dll
+obj\Debug\..\..\LPC\Grpc.Net.Common.dll
+obj\Debug\..\..\LPC\Grpc.Core.Api.dll
+obj\Debug\..\..\LPC\Serilog.Extensions.Logging.dll
+obj\Debug\..\..\LPC\SimpleBase.dll
+obj\Debug\..\..\LPC\Serilog.Sinks.Console.dll
+obj\Debug\..\..\LPC\Microsoft.Extensions.Hosting.WindowsServices.dll
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Client.pdb
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Common.dll
+obj\Debug\..\..\LPC\Grpc.Net.Client.dll
+obj\Debug\..\..\LPC\Grpc.AspNetCore.Server.dll
+obj\Debug\..\..\LPC\appsettings.Development.json
+obj\Debug\..\..\LPC\Serilog.dll
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Client.deps.json
+obj\Debug\..\..\LPC\Grpc.Net.ClientFactory.dll
+obj\Debug\..\..\LPC\appsettings.json
+obj\Debug\..\..\LPC\Microsoft.Extensions.DependencyModel.dll
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Common.pdb
+obj\Debug\..\..\LPC\Thermo.CMDI.IpcCommunications.Client.dll
+C:\Users\deekshith.bc\source\repos\WindowsService\bin\Debug\WindowsService.exe

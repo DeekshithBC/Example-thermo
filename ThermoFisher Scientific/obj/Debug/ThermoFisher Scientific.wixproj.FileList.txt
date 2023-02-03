@@ -1,0 +1,22 @@
+obj\Debug\components.wixobj
+obj\Debug\Directory.wixobj
+obj\Debug\Environmemt.wixobj
+obj\Debug\mergemodule.wixobj
+obj\Debug\Product.wixobj
+obj\Debug\service.wixobj
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\en-us\ThermoFisher_Scientific.msi
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\en-us\ThermoFisher_Scientific.wixpdb
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\es-es\ThermoFisher_Scientific.msi
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\es-es\ThermoFisher_Scientific.wixpdb
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\de-de\ThermoFisher_Scientific.msi
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\de-de\ThermoFisher_Scientific.wixpdb
+obj\Debug\ThermoFisher Scientific.wixproj.BindContentsFileListen-us.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindOutputsFileListen-us.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindBuiltOutputsFileListen-us.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindContentsFileListes-es.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindOutputsFileListes-es.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindBuiltOutputsFileListes-es.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindContentsFileListde-de.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindOutputsFileListde-de.txt
+obj\Debug\ThermoFisher Scientific.wixproj.BindBuiltOutputsFileListde-de.txt
+obj\Debug\Feature.wixobj

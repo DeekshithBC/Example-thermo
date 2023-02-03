@@ -1,0 +1,2 @@
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\de-de\ThermoFisher_Scientific.msi
+C:\Users\deekshith.bc\source\repos\Thermofisher Scientific\bin\Debug\de-de\ThermoFisher_Scientific.wixpdb
